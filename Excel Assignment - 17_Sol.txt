@@ -1,0 +1,160 @@
+Excel Assignment - 17
+
+1. What are modules in VBA and describe in detail the importance of
+creating a module?
+
+Sol: A module is the fundamental syntactic unit of VBA source code. The physical representation of a module is implementation dependent but logically a VBA module is a sequence of Unicode characters that conform to the VBA language grammars.
+
+ A module consists of two parts: a module header and a module body:-
+
+ a) The module header is a set of attributes consisting of name/value pairs that specify the certain linguistic characteristics of a module.
+
+ b) A module body consists of actual VBA Language source code and most typically is directly written by a human programmer.
+
+  VBA supports two kinds of modules, procedural modules and class modules, whose contents MUST conform to the grammar productions <procedural-module> 
+  and <class-module>, respectively:-
+
+ Eg - procedural-module = LINE-START procedural-module-header EOS 
+                     LINE-START procedural-module-body 
+ class-module = LINE-START class-module-header  
+                LINE-START class-module-body 
+  
+ procedural-module-header = attribute "VB_Name" attr-eq quoted-identifier attr-end 
+  
+ class-module-header = 1*class-attr 
+  
+ class-attr = attribute "VB_Name" attr-eq quoted-identifier attr-end 
+      /  attribute "VB_GlobalNameSpace" attr-eq "False" attr-end 
+      /  attribute "VB_Creatable" attr-eq "False" attr-end 
+      /  attribute "VB_PredeclaredId" attr-eq boolean-literal-identifier attr-end 
+      /  attribute "VB_Exposed" attr-eq boolean-literal-identifier attr-end 
+      /  attribute "VB_Customizable" attr-eq boolean-literal-identifier attr-end 
+ attribute = LINE-START "Attribute" 
+ attr-eq = "=" 
+ attr-end = LINE-END 
+  
+ quoted-identifier = double-quote NO-WS IDENTIFIER NO-WS double-quote
+
+
+2. What is Class Module and what is the difference between a Class
+Module and a Module?
+
+Sol: VBA module is a container for code that can be used to create functions and procedures. It is typically used for organizing code into logical units. On the other hand, a class module is a special type of module that allows you to create custom objects with their own properties, methods, and events.
+
+a) Code Reusability: With VBA modules, you can write reusable code snippets that can be called from multiple places in your Excel application.
+   It's like having a repertoire of cooking recipes that you can use in different dishes.
+
+b) Easier Debugging: By compartmentalizing your code into modules, you can isolate and troubleshoot issues more efficiently. It's like finding the
+   exact screw that's causing your clock to malfunction instead of disassembling the entire mechanism.
+
+c) Improved Readability: VBA modules allow you to break down your code into smaller, more digestible sections. It's like dividing a complex novel 
+   into chapters, making it easier to follow the story.
+
+d) Flexible Execution: Modules enable you to control when and how your code executes. It's like having the power to turn on specific lights in 
+   our house at different times of the day, creating the perfect ambiance.
+
+
+3. What are Procedures? What is a Function Procedure and a Property
+Procedure?
+
+Sol: A procedure is a named section of code that is run as a unit. Procedures come in the form of Subs, Functions, Property procedures, Events procedures, and DLL procedures. To call a procedure is to invoke it, executing its code, before control is yielded back to its caller.
+
+Functions:-
+
+Always return a value
+Can be used as spreadsheet functions
+Used to assign or retrieve the values of properties
+Are usually used in class modules to control public access to private members
+
+
+4. What are Procedures? What is a Function Procedure and a Property
+Procedure?
+
+Sol: A procedure is a named section of code that is run as a unit. Procedures come in the form of Subs, Functions, Property procedures, Events procedures, and DLL procedures. To call a procedure is to invoke it, executing its code, before control is yielded back to its caller.
+
+A property procedure is a series of Visual Basic statements that manipulate a custom property on a module, class, or structure. Property procedures are also known as property accessors. Visual Basic provides for the following property procedures: A Get procedure returns the value of a property.
+
+5. What is a sub procedure and what are all the parts of a sub procedure
+and when are they used?
+
+Sol: A Sub procedure is a series of Visual Basic statements enclosed by the Sub and End Sub statements. The Sub procedure performs a task and then returns control to the calling code, but it does not return a value to the calling code.
+
+It begins with a Sub keyword and ends with End Sub keywords. A subprocedure is also called a subroutine. It is used to execute a certain block of statements consists the body of the procedure. It is called explicitly by its name whenever it is required to perform a certain.
+
+Syntax-
+
+[modifiers] Sub SubName[(parameterList)]
+    ' Statements of the Sub procedure.
+End Sub
+
+Eg- 
+
+Sub tellOperator(ByVal task As String)
+    Dim stamp As Date
+    stamp = TimeOfDay()
+    MsgBox("Starting " & task & " at " & CStr(stamp))
+End Sub
+
+
+
+6. How do you add comments in a VBA code? How do you add multiple
+lines of comments in a VBA code?
+
+Sol: Add a Comment in a VBA Code:- 
+
+1. First, click on the line where you want to insert the comment.
+2. After that, type an APOSTROPHE using your keyboard key.
+3. Next, type the comment that you want to add to the code.
+4. In the end, hit enter to move to the new line and the comment will turn green.
+
+a) Helps you to Document your Work: You can use a comment to describe how code works, which can help you in the future to recall it easily or any other user.
+
+b) Track the Changes: If some codes need you to change them frequently you can use comments to track or record changes within the code.
+
+c) Describe a Function Procedure: When you write a procedure you can add a comment at the starting to describe the purpose of this procedure and how it works.
+
+d) Describe a Variable: Variables are one of the most important things that you need to use while writing a VBA code and you can use a comment to describe a variable.
+
+e) Debug our Code: We can use VBA comments to debug the code by converting code lines into comments for testing.
+
+
+7. How do you add comments in a VBA code? How do you add multiple
+lines of comments in a VBA code?
+
+Sol: Add a Comment in a VBA Code:- 
+
+1. First, click on the line where you want to insert the comment.
+
+2. After that, type an APOSTROPHE using your keyboard key.
+
+3. Next, type the comment that you want to add to the code.
+
+4. In the end, hit enter to move to the new line and the comment will turn green.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
